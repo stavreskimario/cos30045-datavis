@@ -1,0 +1,44 @@
+h1, h2, footer {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+h1 {
+    color: #6825da;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #ff4f5e;
+}
+
+p {
+    font-family: Arial, sans-serif;
+}
+
+li {
+    font-family: Arial, sans-serif; 
+}
+
+footer {
+    padding: 0 15px 0 15px;
+    display: flex;
+    border-style: solid;
+    border-color: #1e1e1e;
+    border-width: thick;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+    font-size: 200%;
+    color: #6825da;
+
+}
+
+figure {
+    display: table;
+    width: 1px; /* This can be any width, so long as it's narrower than any image */
+}
+img, figcaption {
+    display: table-row;
+}
