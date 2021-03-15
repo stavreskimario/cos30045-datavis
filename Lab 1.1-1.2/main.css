@@ -1,4 +1,6 @@
-h1, h2, footer {
+h1,
+h2,
+footer {
     font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
@@ -18,7 +20,7 @@ p {
 }
 
 li {
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
 
 footer {
@@ -32,13 +34,15 @@ footer {
     justify-content: center;
     font-size: 200%;
     color: #6825da;
-
 }
 
 figure {
     display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
+    width: 1px;
+    /* This can be any width, so long as it's narrower than any image */
 }
-img, figcaption {
+
+img,
+figcaption {
     display: table-row;
 }

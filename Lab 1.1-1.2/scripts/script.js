@@ -1,0 +1,42 @@
+/*
+Author: Mario Stavreski
+Created: 12/03/2021
+Revisions: v1.0
+*/
+
+"use strict";
+
+function hideAll() {
+    var el = document.getElementsByTagName("figure");
+
+    for (var i = 0; i < el.length; i++) {
+        el[i].style.visibility = "hidden";
+    }
+}
+
+function btn2011(e) {
+    //hideAll();
+    var el = document.getElementById("fig1");
+    el.style.display = "block";
+    var el = document.getElementById("fig2");
+    el.style.display = "none";
+
+}
+
+function btn2017(e) {
+    //hideAll();
+    var el = document.getElementById("fig2");
+    el.style.display = "block";
+    var el = document.getElementById("fig1");
+    el.style.display = "none";
+
+}
+
+function init() {
+    var btnfig1 = document.getElementById("btn-2011");
+    btnfig1.onclick = btn2011;
+    var btnfig2 = document.getElementById("btn-2017");
+    btnfig2.onclick = btn2017;
+}
+
+window.onload = init;

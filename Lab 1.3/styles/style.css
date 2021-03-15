@@ -1,0 +1,42 @@
+body {
+  font-family: "Arial", arial, sans-serif;
+  background-color: #a7a7a7;
+  color:
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2em;
+  margin-top: 1em;
+  color: #4693da;
+}
+
+h2 {
+  font-style: italic;
+}
+
+figcaption {
+  font-style: italic;
+  width: 554px;
+}
+
+footer {
+  border-top: 1px solid black;
+}
+
+button {
+  border: 2px double red;
+  background-color: rgb(217, 75, 140);
+
+}
+
+svg>line {
+  stroke: slategrey;
+  stroke-width: 5;
+}
+
+svg>ellipse {
+  fill: red;
+  stroke: rgba(17, 221, 21, 0.45);
+  stroke-width: 10;
+}
