@@ -3,17 +3,15 @@ function init() {
   var h = 100;
   var dataset;
 
-  var rowConverter = function(d) {
-
+  var rowConverter = function (d) {
     return {
-      Test: parseFloat(d.Test)
+      Test: parseFloat(d.Test),
     };
-  }
+  };
 
-  d3.csv("data/random-data.csv", rowConverter, function(data) {
+  d3.csv("data/random-data.csv", rowConverter, function (data) {
     if (data === null) {
-      d3.select("#chart").append("p")
-        .text("Data failed to load");
+      d3.select("#chart").append("p").text("Data failed to load");
     }
     dataset = data;
     console.log(dataset);
@@ -22,23 +20,25 @@ function init() {
   });
 
   function barChart() {
-    var svg = d3.select("#chart")
+    var svg = d3
+      .select("#chart")
       .append("svg")
       .attr("width", w)
       .attr("height", h);
 
-    svg.selectAll("rect")
+    svg
+      .selectAll("rect")
       .data(dataset)
       .enter()
       .append("rect")
-      .attr("x", function(d, i) {
+      .attr("x", function (d, i) {
         return i * (w / dataset.length);
       })
-      .attr("y", function(d) {
+      .attr("y", function (d) {
         return h - d.Test;
       })
       .attr("width", w / dataset.length - 1)
-      .attr("height", function(d) {
+      .attr("height", function (d) {
         return d.Test;
       });
   }
