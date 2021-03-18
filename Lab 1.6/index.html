@@ -1,66 +1,71 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta charset="utf-8" />
-<meta name="description" content="Data visualisation week 2" />
-<meta name="keywords" content="HTML, CSS" />
-<meta name="author" content="Mario Stavreski" />
-<title>Data visualisation exercise 1</title>
-<script type="text/javascript" src="scripts/d3.min.js"></script>
-</head>
-<body>
-<h1>Hello</h1>
-<script type="text/javascript">
-var w = 500;
-var h = 100;
-var dataset = [
-[140, 50],
-[260, 23],
-[12, 90],
-[45, 32],
-[12, 9],
-[100, 5],
-[60, 60]
-];
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data visualisation week 2" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="author" content="Mario Stavreski" />
+    <title>Data visualisation exercise 1</title>
+    <script type="text/javascript" src="scripts/d3.min.js"></script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script type="text/javascript">
+      var w = 500;
+      var h = 100;
+      var dataset = [
+        [140, 50],
+        [260, 23],
+        [12, 90],
+        [45, 32],
+        [12, 9],
+        [100, 5],
+        [60, 60],
+      ];
 
-var svg = d3.select("body")
-.append("svg")
-.attr("width", w)
-.attr("height", h);
-svg.selectAll("rect")
-.data(dataset)
-.enter()
-.append("circle")
-.attr("cx", function(d, i) {
-return d[0];
-})
-.attr("cy", function(d) {
-return d[1];
-})
-.attr("r", 5)
-.attr("fill", function(d, i) {
-if (i == 4) {
-return "red";
-}
-return "slategrey";
-});
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+      svg
+        .selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("circle")
+        .attr("cx", function (d, i) {
+          return d[0];
+        })
+        .attr("cy", function (d) {
+          return d[1];
+        })
+        .attr("r", 5)
+        .attr("fill", function (d, i) {
+          if (i == 4) {
+            return "red";
+          }
+          return "slategrey";
+        });
 
-svg.selectAll("text")
-.data(dataset)
-.enter()
-.append("text")
-.text(function(d) {
-return "(" + d[0] + ", " + d[1] + ")";
-})
-.attr("x", function(d, i) {
-return d[0] + 5;
-})
-.attr("y", function(d) {
-return d[1] + 10;
-})
-.attr("fill", "green");
-</script>
-<footer>COS30045 Data Visualisation <br />
-Mario Stavreski; ID: 103055993</footer>
-</body>
+      svg
+        .selectAll("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .text(function (d) {
+          return "(" + d[0] + ", " + d[1] + ")";
+        })
+        .attr("x", function (d, i) {
+          return d[0] + 5;
+        })
+        .attr("y", function (d) {
+          return d[1] + 10;
+        })
+        .attr("fill", "green");
+    </script>
+    <footer>
+      COS30045 Data Visualisation <br />
+      Mario Stavreski; ID: 103055993
+    </footer>
+  </body>
 </html>
