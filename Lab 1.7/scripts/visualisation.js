@@ -1,9 +1,3 @@
-/*
-Author: Mario Stavreski
-Created: 17/03/2021
-Revisions: v1.0
-*/
-
 function init() {
   var w = 500;
   var h = 100;
