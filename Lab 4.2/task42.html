@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Data Visualisation Excerise 4.2" />
+    <meta name="keywords" content="HTML, CSS, D3" />
+    <meta name="author" content="Mario Stavreski" />
+    <title>4.2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <h1>Task 4.2 Pie Charts</h1>
+    <script>
+        //defining width and height
+        var w = 300;
+        var h = 300;
+
+        // defining dataset
+        var dataset = [20, 90, 50, 33, 95, 12, 44];
+
+        var outerRadius = w / 2;
+        var innerRadius = 0;
+
+        var arc = d3.arc().outerRadius(outerRadius).innerRadius(innerRadius);
+
+        var pie = d3.pie();
+
+        // define padding
+        var padding = 20;
+
+        //create svg element
+        var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+        var arcs = svg
+            .selectAll("g.arc")
+            .data(pie(dataset))
+            .enter()
+            .append("g")
+            .attr("class", "arc")
+            .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+        arcs
+            .append("path")
+            .attr("fill", function(d, i) {
+                return color(i);
+            })
+            .attr("d", function(d, i) {
+                return arc(d, i);
+            });
+
+        arcs
+            .append("text")
+            .text(function(d) {
+                return d.value;
+            })
+            .attr("transform", function(d) {
+                return "translate(" + arc.centroid(d) + ")";
+            });
+    </script>
+</body>
+<br />
+<br />
+<footer>COS30045 Data Visualisation - Mario Stavreski; ID: 103055993</footer>
+
+</html>
